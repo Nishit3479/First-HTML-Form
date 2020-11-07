@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>
+Registration Page
+</title>
+
+<link rel="stylesheet" type="text/css" href="basic.css">
+
+<script type="text/javascript">
+
+function verify1()
+{
+	var field = document.getElementById("field1").value;
+	var regex = /^[A-Za-z]{3,10}$/;
+	if(regex.test(field))
+	{
+		document.getElementById("message1").innerHTML = "valid";
+	}
+	else
+	{
+		document.getElementById("message1").innerHTML = "Please enter a 3-10 letter First name";
+	}
+} 
+function verify2()
+{
+	var field = document.getElementById("field2").value;
+	var regex = /^[A-Za-z]{3,10}$/;
+	if(regex.test(field))
+	{
+		document.getElementById("message2").innerHTML = "Valid";
+	}
+	else
+	{
+		document.getElementById("message2").innerHTML = "Please enter a 3-10 letter Last name";
+	}
+}
+function verify3()
+{
+	var field = document.getElementById("field3").value;
+	var regex = /^[1-9]{10}$/;
+	if(regex.test(field))
+	{
+		document.getElementById("message3").innerHTML = "Valid";
+	}
+	else
+	{
+		document.getElementById("message3").innerHTML = "Please enter a 10 digit mobile number";
+	}
+}
+function verify4()
+{
+	var field = document.getElementById("field3").value;
+	var regex = /^[A-Za-z]{3,12}[1-9](0,5}@gmail.com$/;
+	if(regex.test(field))
+	{
+		document.getElementById("message4").innerHTML = "Valid";
+	}
+	else
+	{
+		document.getElementById("message4").innerHTML = "Please enter a Valid email id";
+	}
+}
+ 
+</script>
+
+<H1>
+Registration Page
+</H1>
+<HR>
+
+<form>
+	First name:<br>
+	<input type="text" name="firstname" required onblur="verify1();"/><span id="message1"><br>
+	Last name:<br>
+	<input type="text" name="lastname" required onblur="verify2();"/><span id="message2"><br>
+	User password:<br>
+	<input type="password" name="password"required><br>
+	Date of Birth:<br>
+	<input type="date" name="birthday" required><br>
+	Mobile Number:<br>
+	<input type="text" name="mobilenumber" required onblur="verify3();"/><span id="message3"><br>
+	Gender:<br>
+	<input type="radio" name="gender" value="Male" checked required>Male<br>
+	<input type="radio" name="gender" value="Female">Female<br>
+	email id:<br>
+	<input type="text" name="emailid" required onblur="verify4();"/><span id="message4"><br>
+	<input type="button" value="Register"> 
+</form>
+
+</body>
+</html>
